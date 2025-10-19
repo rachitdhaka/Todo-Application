@@ -1,0 +1,72 @@
+# Node modules (client + server)
+client/node_modules/
+server/node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+client/.env
+client/.env.local
+server/.env
+server/.env.local
+
+# Build outputs
+client/dist/
+server/dist/
+build/
+.tmp/
+.cache/
+*.tsbuildinfo
+
+# Vite
+.vite
+client/.vite
+
+# Dependency directories
+node_modules/
+
+# Editor / System files
+.DS_Store
+*.icloud
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+
+# Testing
+coverage/
+.nyc_output/
+*.lcov
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
+
+# Optional: lock files (if you don't want them in git)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
