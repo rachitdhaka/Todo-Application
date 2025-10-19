@@ -21,7 +21,7 @@ const ShowTodo = ({ refreshTrigger }) => {
 
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:3000/todo/view", {
+        const response = await axios.get("https://todo-application-8ozv.onrender.com/todo/view", {
           headers: { token },
         });
         setTodos(response.data.todoList);
