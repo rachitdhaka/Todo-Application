@@ -13,18 +13,18 @@ const MainPage = () => {
     };
 
     return (
-        <div className='bg-gray-100 h-screen'>
+        <div className='bg-gray-100 min-h-screen'>
             <Navbar/>
             <Toaster position="top-center" />
-            <div className='container mx-auto px-4 py-8 max-w-6xl '>
+            <div className='container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 md:py-8 max-w-7xl'>
                 <TodoHeader />
             </div>
 
-            <div className='w-6xl mx-auto flex items-start justify-center gap-4 mb-8 p-4 rounded-lg'>
-                <div className='w-[50%]'>
+            <div className='w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-start justify-center gap-4 sm:gap-6 mb-8 px-4 sm:px-6 lg:px-8'>
+                <div className='w-full lg:w-[50%]'>
                     <TodoCreate onTodoCreated={handleTodoCreated} />
                 </div>
-                <div className='w-[50%]'>
+                <div className='w-full lg:w-[50%]'>
                     <ShowTodo refreshTrigger={refreshTrigger} />
                 </div>
             </div>

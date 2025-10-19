@@ -63,37 +63,37 @@ const ShowTodo = ({ refreshTrigger }) => {
 
 
   return (
-    <div className=" bg-white rounded-lg shadow-md p-6 ">
+    <div className="bg-white rounded-lg shadow-md p-4 sm:p-5 md:p-6">
 
-      <h2 className="text-xl font-semibold mb-4">Your Task</h2>
+      <h2 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Your Tasks</h2>
 
       {loading ? (
-        <p className="text-gray-500">Loading todos...</p>
+        <p className="text-gray-500 text-sm sm:text-base">Loading todos...</p>
       ) : todos.length === 0 ? (
-        <div className='flex flex-col justify-center items-center'>
-          <p>No todos yet. Add one!</p>
-          <img src={noTodo} alt="No Todo found" height={100} width={210} />
+        <div className='flex flex-col justify-center items-center py-4 sm:py-6'>
+          <p className="text-sm sm:text-base mb-3">No todos yet. Add one!</p>
+          <img src={noTodo} alt="No Todo found" className="w-32 sm:w-40 md:w-52 h-auto" />
         </div>
       ) : (
-        <ul className="space-y-2">
+        <ul className="space-y-2 sm:space-y-3">
           {todos.map((todo) => (
             <li
               key={todo._id}
-              className="bg-white rounded-md shadow-sm p-3 flex justify-between items-center"
+              className="bg-gray-50 rounded-md shadow-sm p-3 sm:p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-2"
             >
-              <div>
-                <h3 className="font-bold">{todo.title}</h3>
-                <p className="text-sm text-gray-500">Priority: {todo.priority}</p>
+              <div className="flex-1 min-w-0">
+                <h3 className="font-bold text-sm sm:text-base break-words">{todo.title}</h3>
+                <p className="text-xs sm:text-sm text-gray-500 mt-1">Priority: <span className="capitalize">{todo.priority}</span></p>
               </div>
 
 
-              <div className='flex gap-2'>
-                <button className='px-3 py-1 bg-red-700 rounded-md text-red-200 cursor-pointer'
+              <div className='flex gap-2 w-full sm:w-auto justify-end'>
+                <button className='px-2 sm:px-3 py-1 text-xs sm:text-sm bg-red-700 rounded-md text-red-200 cursor-pointer hover:bg-red-800 transition-colors whitespace-nowrap'
                   onClick={() => deleteTodo(todo._id)}>
                   Delete
                 </button>
                 <span
-                  className={`px-3 py-1 text-sm rounded-md ${todo.done ? "bg-green-200 text-green-800" : "bg-yellow-200 text-yellow-800"
+                  className={`px-2 sm:px-3 py-1 text-xs sm:text-sm rounded-md whitespace-nowrap ${todo.done ? "bg-green-200 text-green-800" : "bg-yellow-200 text-yellow-800"
                     }`}
                 >
                   {todo.done ? "Done" : "Pending"}
