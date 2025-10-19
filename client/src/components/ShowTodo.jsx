@@ -44,13 +44,13 @@ const ShowTodo = ({ refreshTrigger }) => {
     const token = localStorage.getItem('token');
 
     try {
-      await axios.delete("http://localhost:3000/todo/delete", {
+      await axios.delete("https://todo-application-8ozv.onrender.com/todo/delete", {
         headers: { token },
         data: { id }
       });
       toast.success("Todo Deleted");
       // Refresh the todo list after deletion
-      const response = await axios.get("http://localhost:3000/todo/view", {
+      const response = await axios.get("https://todo-application-8ozv.onrender.com/todo/view", {
         headers: { token },
       });
       setTodos(response.data.todoList);

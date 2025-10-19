@@ -26,7 +26,7 @@ const SignupPage = () => {
 
         try {
             const data = { name, email, password };
-            const response = await axios.post('http://localhost:3000/user/signup', data);
+            const response = await axios.post('https://todo-application-8ozv.onrender.com/user/signup', data);
 
             console.log(response.data);
             toast.success("Signup successful! Please login.");

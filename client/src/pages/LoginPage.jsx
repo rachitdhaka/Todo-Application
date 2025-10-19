@@ -24,7 +24,7 @@ const LoginPage = () => {
         try {
             const data = { email, password };
 
-            const response = await axios.post('http://localhost:3000/user/login', data);
+            const response = await axios.post('https://todo-application-8ozv.onrender.com/user/login', data);
 
             console.log(response.data);
 
