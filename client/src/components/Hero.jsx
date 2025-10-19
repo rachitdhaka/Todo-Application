@@ -16,7 +16,7 @@ const Hero = () => {
       </div>
 
       <button
-        onClick={() => navigate("/create")}
+        onClick={() => navigate("/view")}
         className="relative text-md geist bg-white text-neutral-800 px-2  rounded-xl cursor-pointer border border-neutral-100 shadow-md hover:shadow-lg hover:bg-gray-100 transition duration-300 ">
         Get Started
 
