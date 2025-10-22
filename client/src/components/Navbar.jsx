@@ -37,7 +37,7 @@ const Navbar = () => {
                     <p className='px-2 sm:px-3 py-1 sm:py-2 rounded-md font-medium text-gray-700 text-xs sm:text-sm md:text-base truncate max-w-[120px] sm:max-w-none'>
                         Welcome, {name}
                     </p>
-                    <button className='px-3 sm:px-4 py-1 sm:py-2 rounded-md bg-red-700 text-white cursor-pointer hover:bg-red-800 transition-colors text-xs sm:text-sm md:text-base whitespace-nowrap'
+                    <button className='px-3 sm:px-2 sm:py-1 rounded-md bg-red-600 text-white cursor-pointer hover:bg-red-800 transition-colors text-xs sm:text-sm md:text-base whitespace-nowrap'
                     onClick={logout}>
                         Logout
                     </button>

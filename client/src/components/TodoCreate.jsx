@@ -66,9 +66,7 @@ const TodoCreate = ({ onTodoCreated }) => {
         }
     }
     return (
-        <div className="bg-white rounded-lg shadow-md p-4 sm:p-5 md:p-6">
-            <h2 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Add New Task</h2>
-
+        <div className="bg-white rounded-lg p-4 sm:p-5 md:p-6">
             {error && (
                 <div className="mb-3 sm:mb-4 p-2 sm:p-3 bg-red-100 border border-red-400 text-red-700 rounded-md text-xs sm:text-sm">
                     {error}
