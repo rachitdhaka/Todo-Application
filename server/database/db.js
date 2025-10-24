@@ -50,6 +50,10 @@ const Todo = new Schema({
   priority: {
     type: String,
     required : true
+  },
+  description: {
+    type: String,
+    required: true
   }
 
 })

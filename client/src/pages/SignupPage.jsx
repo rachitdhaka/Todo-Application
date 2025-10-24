@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
+import Progress from '../components/Progress';
 
 const SignupPage = () => {
 
@@ -10,6 +11,7 @@ const SignupPage = () => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [isLoading, setIsLoading] = useState(false)
 
 
 
@@ -22,7 +24,7 @@ const SignupPage = () => {
             return;
         }
 
-
+        setIsLoading(true);
 
         try {
             const data = { name, email, password };
@@ -40,6 +42,8 @@ const SignupPage = () => {
             console.log(error);
             const errorMessage = error.response?.data?.message || "Signup failed. Please try again.";
             toast.error(errorMessage);
+        } finally {
+            setIsLoading(false);
         }
     }
 
@@ -108,12 +112,19 @@ const SignupPage = () => {
                 {/* Submit Button */}
                 <button
                     type="submit"
-
-                    className="group relative block h-10 sm:h-11 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-sm sm:text-base text-white shadow-inner hover:opacity-90 transition-opacity"
+                    disabled={isLoading}
+                    className="group relative block h-10 sm:h-11 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-sm sm:text-base text-white shadow-inner hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                    Sign Up &rarr;
+                    {isLoading ? 'Signing up...' : 'Sign Up →'}
                     <BottomGradient />
                 </button>
+
+                {/* Loading Progress Bar */}
+                {isLoading && (
+                    <div className="mt-4">
+                        <Progress value={100} className="animate-pulse" />
+                    </div>
+                )}
             </form>
 
 

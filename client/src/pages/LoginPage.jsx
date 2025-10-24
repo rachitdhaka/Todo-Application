@@ -3,11 +3,13 @@ import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
+import Progress from '../components/Progress';
 
 const LoginPage = () => {
 
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
 
 
@@ -20,6 +22,8 @@ const LoginPage = () => {
             toast.error("Please fill in all fields");
             return;
         }
+
+        setIsLoading(true);
 
         try {
             const data = { email, password };
@@ -45,12 +49,14 @@ const LoginPage = () => {
             console.log(error);
             const errorMessage = error.response?.data?.message || "Login failed. Please try again.";
             toast.error(errorMessage);
+        } finally {
+            setIsLoading(false);
         }
 
     }
 
     return (
-        <div className='flex min-h-screen bg-gray-100 justify-center items-center px-4 sm:px-6 py-8'>
+        <div className='flex min-h-screen bg-gray-100 justify-center items-center px-4 sm:px-6 py-8 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]'>
             <Toaster position="top-center"  />
             <div className="shadow-lg mx-auto w-full max-w-md rounded-2xl bg-white p-4 sm:p-6 md:p-8">
                 <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-neutral-800">Welcome to Todo</h2>
@@ -119,11 +125,19 @@ const LoginPage = () => {
                     {/* Submit Button */}
                     <button
                         type="submit"
-                        className="group relative block h-10 sm:h-11 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-sm sm:text-base text-white shadow-inner hover:opacity-90 transition-opacity"
+                        disabled={isLoading}
+                        className="group relative block h-10 sm:h-11 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-sm sm:text-base text-white shadow-inner hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                        Login &rarr;
+                        {isLoading ? 'Logging in...' : 'Login →'}
                         <BottomGradient />
                     </button>
+
+                    {/* Loading Progress Bar */}
+                    {isLoading && (
+                        <div className="mt-4">
+                            <Progress value={100} className="animate-pulse" />
+                        </div>
+                    )}
                 </form>
 
 

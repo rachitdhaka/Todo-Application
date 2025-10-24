@@ -22,8 +22,8 @@ TodoRouter.post('/create', authMiddleware, async (req, res) => {
 
     try {
         const Id = req.userId;
-        const { title,  priority } = req.body;
-        await TodoModel.create({ title,  priority, userId: Id })
+        const { title, description ,  priority } = req.body;
+        await TodoModel.create({ title, description, priority, userId: Id })
 
         res.json({ message: "Todo Created" });
     }catch(e){
