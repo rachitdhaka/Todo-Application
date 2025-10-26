@@ -33,7 +33,6 @@ TodoRouter.post('/create', authMiddleware, async (req, res) => {
 
 })
 
-
 TodoRouter.delete('/delete', authMiddleware, async (req, res) => {
     const todoId = req.body.id;
     const userId = req.userId;
@@ -44,6 +43,25 @@ TodoRouter.delete('/delete', authMiddleware, async (req, res) => {
     } catch (e) {
         console.error('Error deleting todo', e);
         res.status(500).json({ message: 'Error deleting todo' });
+    }
+})
+
+
+TodoRouter.put('/update', authMiddleware, async (req, res) => {
+    const todoId = req.body.id;
+    const userId = req.userId;
+    const { title, description, priority, done } = req.body;
+
+    try {
+        await TodoModel.findOneAndUpdate(
+            { _id: todoId, userId },
+            { title, description, priority, done },
+            { new: true }
+        );
+        res.json({ message: "Todo Updated" });
+    } catch (e) {
+        console.error('Error updating todo', e);
+        res.status(500).json({ message: 'Error updating todo' });
     }
 })
 
