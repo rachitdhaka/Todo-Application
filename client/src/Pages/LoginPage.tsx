@@ -31,7 +31,7 @@ const LoginPage = () => {
       const data = { email, password };
 
       const response = await axios.post(
-        "https://todo-application-nze4.onrender.com//user/login",
+        "https://todo-application-nze4.onrender.com/user/login",
         data
       );
       console.log(response.data);
