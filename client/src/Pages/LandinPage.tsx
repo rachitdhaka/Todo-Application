@@ -8,7 +8,7 @@ import LandingNav from "./LandingNav";
 const LandingPage = () => {
 
   return (
-    <div className="relative w-full min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-amber-100 via-sky-200 to-gray-100 overflow-hidden px-4 sm:px-6 lg:px-8">
+    <div className="relative w-full min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-amber-100 via-sky-200 to-gray-100 overflow-hidden px-3 sm:px-4 md:px-6 lg:px-8">
 
 
       {/* Decorative lines - hidden on mobile */}
@@ -26,11 +26,11 @@ const LandingPage = () => {
         <Hero />
 
         {/* bg image */}
-        <div className="mt-10 sm:mt-20 md:mt-30 mb-8 sm:mb-12 flex justify-center">
+        <div className="mt-8 sm:mt-12 md:mt-16 lg:mt-20 mb-6 sm:mb-8 md:mb-10 lg:mb-12 flex justify-center px-2">
           <img
             src={bg}
             alt="Todo App Preview"
-            className="rounded-xl border border-neutral-300 w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl h-auto"
+            className="rounded-lg sm:rounded-xl border border-neutral-300 w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl h-auto shadow-lg"
           />
         </div>
       </div>

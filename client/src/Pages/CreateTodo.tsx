@@ -76,53 +76,55 @@ const CreateTodo: React.FC<CreateTodoProps> = ({ onTodoCreated }) => {
         <Dialog>
         <form onSubmit={handleSubmit}>
           <DialogTrigger asChild>
-            <Button variant="outline">Create Todo</Button>
+            <Button variant="outline" className="text-sm sm:text-base px-3 sm:px-4">Create Todo</Button>
           </DialogTrigger>
-          <DialogContent className="sm:max-w-[425px]">
+          <DialogContent className="w-[calc(100vw-2rem)] max-w-[425px] mx-auto">
             <DialogHeader>
-              <DialogTitle>Create Todo</DialogTitle>
-              <DialogDescription>
+              <DialogTitle className="text-lg sm:text-xl">Create Todo</DialogTitle>
+              <DialogDescription className="text-sm sm:text-base">
                 Fill in the details for your new todo item.
               </DialogDescription>
             </DialogHeader>
-            <div className="grid gap-4">
-              <div className="grid gap-3">
-                <Label>Title</Label>
+            <div className="grid gap-3 sm:gap-4">
+              <div className="grid gap-2 sm:gap-3">
+                <Label className="text-sm sm:text-base">Title</Label>
                 <Input
                   type="text"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
+                  className="text-sm sm:text-base"
                 />
               </div>
-              <div className="grid gap-3">
-                <Label>Description</Label>
+              <div className="grid gap-2 sm:gap-3">
+                <Label className="text-sm sm:text-base">Description</Label>
                 <Input
                   type="text"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
+                  className="text-sm sm:text-base"
                 />
               </div>
               <div>
                 <Select value={priority} onValueChange={setPriority}>
-                  <Label className="mb-4">Priority</Label>
-                  <SelectTrigger className="w-[180px]">
+                  <Label className="mb-2 sm:mb-4 text-sm sm:text-base">Priority</Label>
+                  <SelectTrigger className="w-full sm:w-[180px] text-sm sm:text-base">
                     <SelectValue placeholder="Select a priority" />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectGroup>
-                      <SelectItem value="low">Low</SelectItem>
-                      <SelectItem value="medium">Medium</SelectItem>
-                      <SelectItem value="high">High</SelectItem>
+                      <SelectItem value="low" className="text-sm sm:text-base">Low</SelectItem>
+                      <SelectItem value="medium" className="text-sm sm:text-base">Medium</SelectItem>
+                      <SelectItem value="high" className="text-sm sm:text-base">High</SelectItem>
                     </SelectGroup>
                   </SelectContent>
                 </Select>
               </div>
             </div>
-            <DialogFooter>
+            <DialogFooter className="flex-col sm:flex-row gap-2 sm:gap-0">
               <DialogClose asChild>
-                <Button variant="outline">Cancel</Button>
+                <Button variant="outline" className="w-full sm:w-auto text-sm sm:text-base">Cancel</Button>
               </DialogClose>
-              <Button type="submit" onClick={handleSubmit}>
+              <Button type="submit" onClick={handleSubmit} className="w-full sm:w-auto text-sm sm:text-base">
                 Save changes
               </Button>
             </DialogFooter>

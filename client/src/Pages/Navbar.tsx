@@ -35,22 +35,22 @@ const Navbar = () => {
   };
 
   return (
-    <div className="mx-auto w-6xl p-2">
+    <div className="mx-auto max-w-7xl px-2 sm:px-4 py-2">
       {isLoggedIn ? (
-        <div className="flex  gap-3 justify-end items-center">
-          <span className="mr-4">Welcome, {name}!</span>
+        <div className="flex flex-wrap gap-2 sm:gap-3 justify-end items-center">
+          <span className="mr-2 sm:mr-4 text-sm sm:text-base">Welcome, {name}!</span>
           <ModeToggle />
-          <Button onClick={logoutHandler} className="cursor-pointer">
+          <Button onClick={logoutHandler} className="cursor-pointer text-sm sm:text-base px-3 sm:px-4">
             Logout
           </Button>
         </div>
       ) : (
-        <div className="flex  gap-3 justify-end">
+        <div className="flex flex-wrap gap-2 sm:gap-3 justify-end">
           <ModeToggle />
-          <Button onClick={login} className="cursor-pointer">
+          <Button onClick={login} className="cursor-pointer text-sm sm:text-base px-3 sm:px-4">
             Login
           </Button>
-          <Button onClick={signup} variant="ghost" className="cursor-pointer">
+          <Button onClick={signup} variant="ghost" className="cursor-pointer text-sm sm:text-base px-3 sm:px-4">
             Signup
           </Button>
         </div>

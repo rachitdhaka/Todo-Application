@@ -27,20 +27,15 @@ const LandingNav = () => {
     navigate("/signup");
   };
   return (
-    <div className="mx-auto w-4xl p-2">
-
-
-
-        <div className="flex  gap-3 mt-5 justify-end">
-
-          <Button onClick={login} className="cursor-pointer">
+    <div className="mx-auto max-w-4xl px-2 sm:px-4">
+        <div className="flex flex-wrap gap-2 sm:gap-3 mt-3 sm:mt-5 justify-end">
+          <Button onClick={login} className="cursor-pointer text-sm sm:text-base px-3 sm:px-4">
             Login
           </Button>
-          <Button onClick={signup} variant="ghost" className="cursor-pointer">
+          <Button onClick={signup} variant="ghost" className="cursor-pointer text-sm sm:text-base px-3 sm:px-4">
             Signup
           </Button>
         </div>
-
     </div>
   )
 }

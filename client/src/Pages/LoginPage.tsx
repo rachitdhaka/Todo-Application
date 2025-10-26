@@ -58,7 +58,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen w-full flex  justify-center items-center  bg-[#f8fafc] relative">
+    <div className="min-h-screen w-full flex justify-center items-center bg-[#f8fafc] relative px-4 sm:px-6 py-8">
       {/* Bottom Fade Grid Background */}
       <div
         className="absolute inset-0 z-0"
