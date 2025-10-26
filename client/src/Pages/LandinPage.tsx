@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Hero from "../components/Hero";
-import bg from "../assets/image/bg.png";
-import LandingNavbar from "../components/LandingNavbar";
+import bg from "../assets/images/bg.png";
+import LandingNav from "./LandingNav";
+
 
 
 
@@ -22,7 +23,7 @@ const LandingPage = () => {
 
       {/* Main content */}
       <div className="relative z-10 flex flex-col w-full max-w-4xl">
-        <LandingNavbar onLoginClick={() => setShowLogin(true)} />
+        <LandingNav />
         <Hero />
 
         {/* bg image */}
