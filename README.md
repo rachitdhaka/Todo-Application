@@ -1,5 +1,5 @@
 # 📝 Todo-Application
-
+Live Link : https://todo-application-rachit.vercel.app/
 A **Full-Stack MERN-style Todo Application** built using **React + Node.js + Express + MongoDB + JWT Authentication**, fully typed with **TypeScript**.  
 This project demonstrates modern web-development practices such as REST APIs, authentication, and modular architecture.
 
@@ -54,4 +54,29 @@ This project demonstrates modern web-development practices such as REST APIs, au
 ---
 
 ## 📂 Folder Structure
+
+Todo-Application
+│
+├── client/ # React Frontend
+│ ├── src/
+│ │ ├── components/
+│ │ ├── pages/
+│ │ ├── services/ # Axios API calls
+│ │ ├── App.tsx
+│ │ └── main.tsx
+│ ├── package.json
+│ └── tsconfig.json
+│
+├── server/ # Express Backend
+│ ├── src/
+│ │ ├── controllers/
+│ │ ├── models/
+│ │ ├── routes/
+│ │ ├── middleware/
+│ │ ├── config/
+│ │ └── index.ts
+│ ├── package.json
+│ └── tsconfig.json
+│
+└── README.md
 
