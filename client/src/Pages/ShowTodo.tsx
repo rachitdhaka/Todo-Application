@@ -103,18 +103,18 @@ const ShowTodo: React.FC<{ refreshTrigger: number }> = ({ refreshTrigger }) => {
         todos.length === 0 ? (
           <Vacant />
         ) : (
-          <div className="p-2 ">
+          <div className="p-2 sm:p-4">
             <h2 className="text-lg sm:text-xl font-regular mb-3 sm:mb-4">
-              <span className="instrument-serif-regular text-2xl">
+              <span className="instrument-serif-regular text-xl sm:text-2xl">
                 Your Tasks
               </span>
             </h2>
 
-            <ul className="w- grid grid-cols-4 gap-4 ">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
               {todos.map((todo) => (
                 <li
                   key={todo._id}
-                  className="bg-gray-50 rounded-md p-3 flex justify-between items-start gap-4 shadow-[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)]"
+                  className="bg-gray-50 rounded-md p-3 sm:p-4 flex justify-between items-start gap-3 sm:gap-4 shadow-[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)]"
                 >
                   <div className="flex-1 min-w-0">
                     <h3
@@ -125,7 +125,7 @@ const ShowTodo: React.FC<{ refreshTrigger: number }> = ({ refreshTrigger }) => {
                       {todo.title}
                     </h3>
                     <h3
-                      className={`font-regular text-sm sm:text-base break-words ${
+                      className={`font-regular text-xs sm:text-sm break-words ${
                         todo.done ? "line-through text-gray-500" : ""
                       }`}
                     >
@@ -137,21 +137,21 @@ const ShowTodo: React.FC<{ refreshTrigger: number }> = ({ refreshTrigger }) => {
                         todo.done ? "line-through" : ""
                       }`}
                     >
-                      <span>Priority : </span>
-                      {todo.priority}
+                      <span>Priority: </span>
+                      <span className="capitalize">{todo.priority}</span>
                     </p>
                   </div>
 
-                  <div className="flex flex-col justify-between h-full items-center pt-1 cursor-pointer">
+                  <div className="flex flex-col justify-between h-full items-center gap-3 sm:gap-4 pt-1 cursor-pointer">
                     <Checkbox
-                      className="cursor-pointer"
+                      className="cursor-pointer h-4 w-4 sm:h-5 sm:w-5"
                       id={`todo-${todo._id}`}
                       checked={todo.done}
                       onCheckedChange={() => toggleTodoComplete(todo._id)}
                     />
 
-                    <div onClick={() => deleteTodo(todo._id)}>
-                      <IconTrash stroke={1} />
+                    <div onClick={() => deleteTodo(todo._id)} className="hover:text-red-500 transition-colors">
+                      <IconTrash stroke={1.5} size={18} className="sm:w-5 sm:h-5" />
                     </div>
                   </div>
                 </li>

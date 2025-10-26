@@ -26,13 +26,13 @@ const Dashboard = () => {
       {/* Your Content/Components */}
       <div className="relative z-1">
         <Navbar />
-        <div className="mx-auto w-6xl h-screen  p-4  ">
+        <div className="mx-auto max-w-7xl min-h-screen px-2 sm:px-4 py-4 sm:py-6">
           {/* Create Todo */}
-          <div className="flex mx-auto justify-center mb-4">
+          <div className="flex mx-auto justify-center mb-4 sm:mb-6">
             <CreateTodo onTodoCreated={handleTodoCreated} />
           </div>
           {/* show Todo */}
-          <div className="h-fit  ">
+          <div className="h-fit">
             <ShowTodo refreshTrigger={refreshTrigger} />
           </div>
         </div>
