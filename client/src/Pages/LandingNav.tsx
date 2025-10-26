@@ -1,12 +1,11 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { ModeToggle } from "@/components/mode-toggle";
 
 const LandingNav = () => {
-    const [name, setName] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [_name, _setName] = useState("");
+  const [_isLoggedIn, _setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -14,18 +13,11 @@ const LandingNav = () => {
     const token = localStorage.getItem("token");
 
     if (storedName) {
-      setName(storedName);
+      _setName(storedName);
     }
 
-    setIsLoggedIn(!!token);
+    _setIsLoggedIn(!!token);
   }, []);
-
-  const logoutHandler = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("name");
-    setName("");
-    setIsLoggedIn(false);
-  };
 
   const login = () => {
     navigate("/login");

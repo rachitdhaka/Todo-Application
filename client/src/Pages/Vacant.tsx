@@ -1,25 +1,13 @@
-import React from "react";
-import { Button } from "@/components/ui/button";
 import {
   Empty,
-  EmptyContent,
   EmptyDescription,
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
 } from "@/components/ui/empty";
 import { IconFolderCode } from "@tabler/icons-react";
-import { ArrowUpRightIcon } from "lucide-react";
-import { useNavigate } from "react-router-dom";
-const Vacant = () => {
-  const navigate = useNavigate();
-  const login = () => {
-    navigate("/login");
-  };
 
-  const signup = () => {
-    navigate("/signup");
-  };
+const Vacant = () => {
   return (
     <div >
       <Empty>
@@ -33,7 +21,7 @@ const Vacant = () => {
             first todo.
           </EmptyDescription>
         </EmptyHeader>
-        
+
       </Empty>
     </div>
   );

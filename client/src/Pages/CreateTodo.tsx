@@ -16,7 +16,6 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
@@ -35,19 +34,12 @@ const CreateTodo: React.FC<CreateTodoProps> = ({ onTodoCreated }) => {
   const [title, setTitle] = React.useState("");
   const [description, setDescription] = React.useState("");
   const [priority, setPriority] = React.useState("");
-  const [error, setError] = React.useState("");
 
   // Form submit handler
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!title.trim()) {
-      setError("Please enter a task title");
-      return;
-    }
-
-    if (!priority) {
-      setError("Please select a priority level");
+    if (!title.trim() || !priority) {
       return;
     }
 

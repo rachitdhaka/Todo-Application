@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
 import { IconTrash } from "@tabler/icons-react";
-import { Dialog } from "@/components/ui/dialog";
 import Vacant from "./Vacant";
 // 🟢 1️⃣ Define the Todo type
 type Todo = {
@@ -16,7 +14,7 @@ type Todo = {
 
 const ShowTodo: React.FC<{ refreshTrigger: number }> = ({ refreshTrigger }) => {
   const [todos, setTodos] = useState<Todo[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [_loading, setLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {

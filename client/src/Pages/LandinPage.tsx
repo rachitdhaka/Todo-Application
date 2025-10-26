@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Hero from "../components/Hero";
 import bg from "../assets/images/bg.png";
 import LandingNav from "./LandingNav";
