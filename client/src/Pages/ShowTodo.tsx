@@ -35,7 +35,7 @@ const ShowTodo: React.FC<{ refreshTrigger: number }> = ({ refreshTrigger }) => {
 
       try {
         setLoading(true);
-        const response = await axios.get("https://todo-application-nze4.onrender.com/0/todo/view", {
+        const response = await axios.get("https://todo-application-nze4.onrender.com//todo/view", {
           headers: { token },
         });
         setTodos(response.data.todoList);
@@ -58,7 +58,7 @@ const ShowTodo: React.FC<{ refreshTrigger: number }> = ({ refreshTrigger }) => {
     try {
       // Update the todo in the database
       await axios.put(
-        "https://todo-application-nze4.onrender.com/0/todo/update",
+        "https://todo-application-nze4.onrender.com//todo/update",
         {
           id: id,
           title: todo.title,
@@ -84,11 +84,11 @@ const ShowTodo: React.FC<{ refreshTrigger: number }> = ({ refreshTrigger }) => {
     const todoId = id;
     try {
       const token = localStorage.getItem("token");
-      await axios.delete("https://todo-application-nze4.onrender.com/0/todo/delete", {
+      await axios.delete("https://todo-application-nze4.onrender.com//todo/delete", {
         headers: { token },
         data: { id: todoId },
       });
-      const response = await axios.get("https://todo-application-nze4.onrender.com/0/todo/view", {
+      const response = await axios.get("https://todo-application-nze4.onrender.com//todo/view", {
         headers: { token },
       });
       setTodos(response.data.todoList);

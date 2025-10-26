@@ -50,7 +50,7 @@ const CreateTodo: React.FC<CreateTodoProps> = ({ onTodoCreated }) => {
       const token = localStorage.getItem("token");
 
       const response = await axios.post(
-        "https://todo-application-nze4.onrender.com/0/todo/create",
+        "https://todo-application-nze4.onrender.com//todo/create",
         data,
         {
           headers: { token },

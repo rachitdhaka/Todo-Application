@@ -30,7 +30,7 @@ const SignupPage = () => {
     try {
       const data = { name: fullName, email, password };
       const response = await axios.post(
-        "https://todo-application-nze4.onrender.com/0/user/signup",
+        "https://todo-application-nze4.onrender.com//user/signup",
         data
       );
       console.log("Signup successful:", response.data);
