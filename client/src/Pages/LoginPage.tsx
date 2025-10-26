@@ -31,7 +31,7 @@ const LoginPage = () => {
       const data = { email, password };
 
       const response = await axios.post(
-        "http://localhost:3000/user/login",
+        "https://todo-application-nze4.onrender.com/0/user/login",
         data
       );
       console.log(response.data);
@@ -75,7 +75,7 @@ const LoginPage = () => {
         }}
       />
       {/* Your Content/Components */}
-      
+
       <Card className="w-full max-w-sm relative z-1 shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
         <CardHeader>
           <CardTitle>Login to your account</CardTitle>
