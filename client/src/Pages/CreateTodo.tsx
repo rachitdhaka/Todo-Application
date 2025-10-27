@@ -35,7 +35,8 @@ const CreateTodo: React.FC<CreateTodoProps> = ({ onTodoCreated }) => {
   const [title, setTitle] = React.useState("");
   const [description, setDescription] = React.useState("");
   const [priority, setPriority] = React.useState("");
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  const closeButtonRef = React.useRef<HTMLButtonElement>(null);
 
   // Form submit handler
   const handleSubmit = async (e: React.FormEvent) => {
@@ -62,7 +63,10 @@ const CreateTodo: React.FC<CreateTodoProps> = ({ onTodoCreated }) => {
       if (onTodoCreated) {
         onTodoCreated();
       }
-       navigate("/dashboard");
+      navigate("/dashboard");
+
+      // Close the dialog
+      closeButtonRef.current?.click();
 
     } catch (error) {
       console.error("Error creating todo:", error);
@@ -126,7 +130,7 @@ const CreateTodo: React.FC<CreateTodoProps> = ({ onTodoCreated }) => {
             </div>
             <DialogFooter className="flex-col sm:flex-row gap-2 sm:gap-0">
               <DialogClose asChild>
-                <Button variant="outline" className="w-full sm:w-auto text-sm sm:text-base">Cancel</Button>
+                <Button ref={closeButtonRef} variant="outline" className="w-full sm:w-auto text-sm sm:text-base">Cancel</Button>
               </DialogClose>
               <Button type="submit" onClick={handleSubmit} className="w-full sm:w-auto text-sm sm:text-base">
                 Create Todo
