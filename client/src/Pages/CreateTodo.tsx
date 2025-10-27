@@ -25,6 +25,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 import Vacant from "./Vacant";
+import { useNavigate } from "react-router-dom";
 type CreateTodoProps = {
   onTodoCreated?: () => void;
 };
@@ -34,6 +35,7 @@ const CreateTodo: React.FC<CreateTodoProps> = ({ onTodoCreated }) => {
   const [title, setTitle] = React.useState("");
   const [description, setDescription] = React.useState("");
   const [priority, setPriority] = React.useState("");
+    const navigate = useNavigate();
 
   // Form submit handler
   const handleSubmit = async (e: React.FormEvent) => {
@@ -43,7 +45,7 @@ const CreateTodo: React.FC<CreateTodoProps> = ({ onTodoCreated }) => {
       return;
     }
 
-    console.log(title, description, priority);
+    // console.log(title, description, priority);
 
     try {
       const data = { title, description, priority };
@@ -56,10 +58,12 @@ const CreateTodo: React.FC<CreateTodoProps> = ({ onTodoCreated }) => {
           headers: { token },
         }
       );
-      console.log("Todo created successfully:", response.data);
+      // console.log("Todo created successfully:", response.data);
       if (onTodoCreated) {
         onTodoCreated();
       }
+       navigate("/dashboard");
+
     } catch (error) {
       console.error("Error creating todo:", error);
     }
@@ -125,7 +129,7 @@ const CreateTodo: React.FC<CreateTodoProps> = ({ onTodoCreated }) => {
                 <Button variant="outline" className="w-full sm:w-auto text-sm sm:text-base">Cancel</Button>
               </DialogClose>
               <Button type="submit" onClick={handleSubmit} className="w-full sm:w-auto text-sm sm:text-base">
-                Save changes
+                Create Todo
               </Button>
             </DialogFooter>
           </DialogContent>
