@@ -58,7 +58,7 @@ const CreateTodo: React.FC<CreateTodoProps> = ({ onTodoCreated }) => {
           headers: { token },
         }
       );
-      // console.log("Todo created successfully:", response.data);
+      console.log("Todo created successfully:", response.data);
       if (onTodoCreated) {
         onTodoCreated();
       }
