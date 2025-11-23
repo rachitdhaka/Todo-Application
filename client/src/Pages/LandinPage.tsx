@@ -1,5 +1,5 @@
 import Hero from "../components/Hero";
-import bg from "../assets/images/bg.png";
+import bg from "../assets/todobg.png"
 import LandingNav from "./LandingNav";
 
 
